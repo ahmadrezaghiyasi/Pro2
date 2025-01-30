@@ -15,7 +15,6 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      /* Ensures the header is always at the top */
       justify-content: center;
       align-items: center;
     }
@@ -29,7 +28,6 @@
       font-size: 2.5rem;
       font-weight: bold;
       position: fixed;
-      /* Keeps the header always visible */
       top: 0;
       left: 0;
       z-index: 1000;
@@ -75,16 +73,49 @@
     .step .step-line.active {
       background-color: #0d6efd;
     }
+
+    /* Styling for larger and bold form */
+    .form-label,
+    h6 {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .form-control {
+      font-size: 1.1rem;
+    }
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      z-index: 2000;
+    }
+
+    .cookie-banner button {
+      margin: 5px;
+    }
   </style>
 </head>
 
 <body>
 
+  <div class="cookie-banner" id="cookie-banner">
+    Diese Website verwendet Cookies, um die bestmögliche Erfahrung zu gewährleisten.
+    <button class="btn btn-primary btn-sm" onclick="acceptCookies()">Akzeptieren</button>
+    <button class="btn btn-secondary btn-sm" onclick="declineCookies()">Ablehnen</button>
+  </div>
+
   <div class="header">vdv.NRW</div>
 
-  <div class="card" style="width: 24rem;">
+  <div class="card content">
     <div class="card-body text-center">
-      <h5 class="card-title">Formular</h5>
+      <h5 class="card-title" style="font-size: 2rem; front-weight: bold;">Formulare</h5>
       <div class="container mt-5">
         <!-- Progress Steps -->
         <div class="d-flex justify-content-between mb-4">
@@ -105,11 +136,28 @@
         <div id="step-content">
           <div class="step-section" style="display: block;">
             <h6>Dokumente</h6>
-            <select multiple class="form-select" aria-label="Document selection">
-              <option value="1">Dokument 1</option>
-              <option value="2">Dokument 2</option>
-              <option value="3">Dokument 3</option>
-            </select>
+            <form>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="document1">
+                <label class="form-check-label" for="document1">Broschüre 1</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="document2">
+                <label class="form-check-label" for="document2">Merkblatt 2</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="document3">
+                <label class="form-check-label" for="document3">Antragsformular 3</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="document4">
+                <label class="form-check-label" for="document4">Dokument 4</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="document5">
+                <label class="form-check-label" for="document5">Broschüre 5</label>
+              </div>
+            </form>
           </div>
 
           <div class="step-section" style="display: none;">
@@ -152,7 +200,7 @@
 
     function updateSteps() {
       const steps = document.querySelectorAll('.step');
-      const step_line = document.querySelectorAll('.step-line')
+      const step_line = document.querySelectorAll('.step-line');
       const sections = document.querySelectorAll('.step-section');
 
       steps.forEach((step, index) => {
@@ -160,8 +208,8 @@
       });
 
       step_line.forEach((line, index) => {
-        line.classList.toggle('active', index + 1 <= currentStep)
-      })
+        line.classList.toggle('active', index + 1 <= currentStep);
+      });
 
       sections.forEach((section, index) => {
         section.style.display = index === currentStep ? 'block' : 'none';
@@ -177,7 +225,7 @@
         currentStep++;
         updateSteps();
       } else {
-        alert('Form completed!');
+        alert('Formular abgeschlossen!');
       }
     }
 
@@ -188,7 +236,27 @@
       }
     }
 
-    // Initialize steps
+document.addEventListener('DOMContentLoaded', () => {
+  const cookiePreference = localStorage.getItem('cookiePreference');
+  const banner = document.getElementById('cookie-banner');
+
+  if (cookiePreference === 'accepted' || cookiePreference === 'declined') {
+    banner.style.display = 'none';
+  } else {
+    banner.style.display = 'block';
+  }
+    });
+
+    function acceptCookies() {
+      localStorage.setItem('cookiePreference', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    function declineCookies() {
+      localStorage.setItem('cookiePreference', 'declined');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+
     updateSteps();
   </script>
 </body>

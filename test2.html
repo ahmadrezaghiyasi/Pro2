@@ -70,6 +70,32 @@
     .step .step-line.active {
       background-color: #0d6efd;
     }
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+
+    .cookie-banner button {
+      background-color: #f1c40f;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
   </style>
 </head>
 
@@ -169,6 +195,11 @@
         </div>
       </div>
 
+      <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <span>Diese Webseite verwendet Cookies. Mehr erfahren.</span>
+        <button onclick="acceptCookies()">OK</button>
+      </div>
+
         <!-- Buttons -->
         <div class="mt-4 container">
           <div class="row">
@@ -183,6 +214,17 @@
 
   <script>
     let currentStep = 0;
+
+    function acceptCookies() {
+      document.getElementById('cookie-banner').style.display = 'none';
+      localStorage.setItem('cookiesAccepted', 'true');
+    }
+
+    window.onload = function() {
+      if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'flex';
+      }
+    };
 
     function updateSteps() {
       const steps = document.querySelectorAll('.step');
