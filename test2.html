@@ -97,6 +97,10 @@
             <div class="step-circle">4</div>
           </div>
         </div>
+        <div class="step">
+          <div class="step-circle">5</div>
+        </div>
+      </div>
 
         <!-- Schritt-Inhalte -->
         <div id="step-content">
@@ -119,22 +123,51 @@
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="doc2">
-              <label class="form-check-label" for="doc2">Merkblatt 2</label>
+              <label class="form-check-label" for="doc2">Merkblatt 1</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="doc3">
+              <label class="form-check-label" for="doc3">Merkblatt 2</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="doc4">
+              <label class="form-check-label" for="doc4">Antragsformular 1</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="doc5">
+              <label class="form-check-label" for="doc5">Broschüre 2</label>
             </div>
           </div>
 
           <!-- Schritt 3 -->
           <div class="step-section" style="display: none;">
-            <h6>Zusammenfassung</h6>
-            <p>Überprüfen Sie Ihre Angaben.</p>
+            <h6>Anmeldung</h6>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Mitgliedsnummer</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Passwort</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
           </div>
 
           <!-- Schritt 4 -->
           <div class="step-section" style="display: none;">
-            <h6>Abschluss</h6>
-            <p>Vielen Dank! Ihre Angaben wurden gespeichert.</p>
+            <h6>Bereitstellungsart</h6>
+            <select class="form-select" aria-label="Shipping method">
+              <option value="1">Versand</option>
+              <option value="2">Download</option>
+            </select>
           </div>
         </div>
+
+        <!--Schritt 5-->
+        <div class="step-section" style="display: none;">
+          <h6>Abschluss</h6>
+          <p>Vielen Dank! Ihre Angaben wurden gespeichert.</p>
+        </div>
+      </div>
 
         <!-- Buttons -->
         <div class="mt-4 container">
