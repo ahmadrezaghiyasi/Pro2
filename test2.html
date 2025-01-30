@@ -102,83 +102,84 @@
         </div>
       </div>
 
-        <!-- Schritt-Inhalte -->
-        <div id="step-content">
-          <!-- Schritt 1 -->
-          <div class="step-section" style="display: block;">
-            <h6>DSGVO</h6>
-            <p>Um fortzufahren, stimmen Sie bitte den <a href="/Datenschutz.html">Datenschutzrichtlinien</a> zu.</p>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="dsgvo-check">
-              <label class="form-check-label" for="dsgvo-check">Ich stimme zu</label>
-            </div>
-          </div>
-
-          <!-- Schritt 2 -->
-          <div class="step-section" style="display: none;">
-            <h6>Dokumente</h6>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="doc1">
-              <label class="form-check-label" for="doc1">Broschüre 1</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="doc2">
-              <label class="form-check-label" for="doc2">Merkblatt 1</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="doc3">
-              <label class="form-check-label" for="doc3">Merkblatt 2</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="doc4">
-              <label class="form-check-label" for="doc4">Antragsformular 1</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="doc5">
-              <label class="form-check-label" for="doc5">Broschüre 2</label>
-            </div>
-          </div>
-
-          <!-- Schritt 3 -->
-          <div class="step-section" style="display: none;">
-            <h6>Anmeldung</h6>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Mitgliedsnummer</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Passwort</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-          </div>
-
-          <!-- Schritt 4 -->
-          <div class="step-section" style="display: none;">
-            <h6>Bereitstellungsart</h6>
-            <select class="form-select" aria-label="Shipping method">
-              <option value="1">Versand</option>
-              <option value="2">Download</option>
-            </select>
+      <!-- Schritt-Inhalte -->
+      <div id="step-content">
+        <!-- Schritt 1 -->
+        <div class="step-section" style="display: block;">
+          <h6>DSGVO</h6>
+          <p>Um fortzufahren, stimmen Sie bitte den <a href="/Datenschutz.html">Datenschutzrichtlinien</a> zu.</p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="dsgvo-check">
+            <label class="form-check-label" for="dsgvo-check">Ich stimme zu</label>
           </div>
         </div>
 
-        <!--Schritt 5-->
+        <!-- Schritt 2 -->
         <div class="step-section" style="display: none;">
-          <h6>Abschluss</h6>
-          <p>Vielen Dank! Ihre Angaben wurden gespeichert.</p>
+          <h6>Dokumente</h6>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="doc1">
+            <label class="form-check-label" for="doc1">Broschüre 1</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="doc2">
+            <label class="form-check-label" for="doc2">Merkblatt 1</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="doc3">
+            <label class="form-check-label" for="doc3">Merkblatt 2</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="doc4">
+            <label class="form-check-label" for="doc4">Antragsformular 1</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="doc5">
+            <label class="form-check-label" for="doc5">Broschüre 2</label>
+          </div>
+        </div>
+
+        <!-- Schritt 3 -->
+        <div class="step-section" style="display: none;">
+          <h6>Anmeldung</h6>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Mitgliedsnummer</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Passwort</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <a href="#">Weiter ohne Anmeldung</a>
+        </div>
+
+        <!-- Schritt 4 -->
+        <div class="step-section" style="display: none;">
+          <h6>Bereitstellungsart</h6>
+          <select class="form-select" aria-label="Shipping method">
+            <option value="1">Versand</option>
+            <option value="2">Download</option>
+          </select>
         </div>
       </div>
 
-        <!-- Buttons -->
-        <div class="mt-4 container">
-          <div class="row">
-            <button class="btn btn-secondary col" onclick="previousStep()" id="back-button" disabled>Zurück</button>
-            <div class="col"></div>
-            <button class="btn btn-primary col" onclick="nextStep()" id="next-button">Weiter</button>
-          </div>
-        </div>
+      <!--Schritt 5-->
+      <div class="step-section" style="display: none;">
+        <h6>Abschluss</h6>
+        <p>Vielen Dank! Ihre Angaben wurden gespeichert.</p>
       </div>
     </div>
+
+    <!-- Buttons -->
+    <div class="mt-4 container">
+      <div class="row">
+        <button class="btn btn-secondary col" onclick="previousStep()" id="back-button" disabled>Zurück</button>
+        <div class="col"></div>
+        <button class="btn btn-primary col" onclick="nextStep()" id="next-button">Weiter</button>
+      </div>
+    </div>
+  </div>
+  </div>
   </div>
 
   <script>
@@ -223,6 +224,15 @@
         updateSteps();
       }
     }
+
+    const skipLoginLink = document.querySelector('a[href="#"]');
+
+    skipLoginLink.addEventListener("click", function (e) {
+      e.preventDefault(); // Verhindert das Neuladen der Seite
+      currentStep++;
+      updateSteps();
+    });
+
 
     document.getElementById('dsgvo-check').addEventListener('change', function () {
       document.getElementById('next-button').disabled = !this.checked;
